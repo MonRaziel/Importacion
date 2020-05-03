@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B42E5D72-4128-4126-91D0-099D2A76983D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Bus", "Infrastructure.Bus", "{A1488273-886F-42DC-B61D-164BA4622828}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.IoC", "Infrastructure.IoC", "{AED77F5F-6CEB-4954-B702-DAC1AE7F39DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Window.Service", "Window.Service", "{BDA98BCC-C65F-4D52-8266-59FE46A98555}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadena.Importacion.Domain.Core", "Cadena.Importacion.Domain.Core\Cadena.Importacion.Domain.Core.csproj", "{A292DDA3-A85D-40F9-8F72-CDCCCD9A9E74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadena.Importacion.Infra.Bus", "Cadena.Importacion.Infra.Bus\Cadena.Importacion.Infra.Bus.csproj", "{674DB68E-4EAD-468E-8277-5032CE29EABF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadena.Importacion.Infra.IoC", "Cadena.Importacion.Infra.IoC\Cadena.Importacion.Infra.IoC.csproj", "{C7E3FACD-3FB4-4062-99B8-03D73D1856CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadena.Importacion.QueueProcessFiles", "Cadena.Importacion.QueueProcessFiles\Cadena.Importacion.QueueProcessFiles.csproj", "{A27A8186-4A65-43BC-91F5-AAC67BF706E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueueProcessFiles", "QueueProcessFiles", "{74090CE3-17C9-4610-8328-76CD303D1410}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProcessFileConsumer", "ProcessFileConsumer", "{8F8C0FF3-F12E-46AF-8B20-7CA652BF8B56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProcessDetailFileConsumer", "ProcessDetailFileConsumer", "{4550FBC5-C137-48CF-864F-23D5840F98D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Transversal", "Infrastructure.Transversal", "{D7E0E84B-3732-4271-B9CD-6AB1C018447C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadena.Importacion.Infra.Transversal", "Cadena.Importacion.Infra.Transversal\Cadena.Importacion.Infra.Transversal.csproj", "{51CE1D00-83AC-41C8-84D6-976681B8D078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadena.Importacion.QueueProcessFiles.Domain", "Cadena.Importacion.QueueProcessFiles.Domain\Cadena.Importacion.QueueProcessFiles.Domain.csproj", "{6B5B08D6-1280-458B-9EEB-8001184E16E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A292DDA3-A85D-40F9-8F72-CDCCCD9A9E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A292DDA3-A85D-40F9-8F72-CDCCCD9A9E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A292DDA3-A85D-40F9-8F72-CDCCCD9A9E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A292DDA3-A85D-40F9-8F72-CDCCCD9A9E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674DB68E-4EAD-468E-8277-5032CE29EABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674DB68E-4EAD-468E-8277-5032CE29EABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674DB68E-4EAD-468E-8277-5032CE29EABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674DB68E-4EAD-468E-8277-5032CE29EABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E3FACD-3FB4-4062-99B8-03D73D1856CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E3FACD-3FB4-4062-99B8-03D73D1856CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E3FACD-3FB4-4062-99B8-03D73D1856CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E3FACD-3FB4-4062-99B8-03D73D1856CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27A8186-4A65-43BC-91F5-AAC67BF706E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27A8186-4A65-43BC-91F5-AAC67BF706E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27A8186-4A65-43BC-91F5-AAC67BF706E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27A8186-4A65-43BC-91F5-AAC67BF706E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51CE1D00-83AC-41C8-84D6-976681B8D078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51CE1D00-83AC-41C8-84D6-976681B8D078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51CE1D00-83AC-41C8-84D6-976681B8D078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51CE1D00-83AC-41C8-84D6-976681B8D078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A292DDA3-A85D-40F9-8F72-CDCCCD9A9E74} = {B42E5D72-4128-4126-91D0-099D2A76983D}
+		{674DB68E-4EAD-468E-8277-5032CE29EABF} = {A1488273-886F-42DC-B61D-164BA4622828}
+		{C7E3FACD-3FB4-4062-99B8-03D73D1856CF} = {AED77F5F-6CEB-4954-B702-DAC1AE7F39DA}
+		{A27A8186-4A65-43BC-91F5-AAC67BF706E1} = {74090CE3-17C9-4610-8328-76CD303D1410}
+		{74090CE3-17C9-4610-8328-76CD303D1410} = {BDA98BCC-C65F-4D52-8266-59FE46A98555}
+		{8F8C0FF3-F12E-46AF-8B20-7CA652BF8B56} = {BDA98BCC-C65F-4D52-8266-59FE46A98555}
+		{4550FBC5-C137-48CF-864F-23D5840F98D5} = {BDA98BCC-C65F-4D52-8266-59FE46A98555}
+		{51CE1D00-83AC-41C8-84D6-976681B8D078} = {D7E0E84B-3732-4271-B9CD-6AB1C018447C}
+		{6B5B08D6-1280-458B-9EEB-8001184E16E5} = {74090CE3-17C9-4610-8328-76CD303D1410}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0D5160F-3A31-4116-9793-DE1CCBD51724}
+	EndGlobalSection
+EndGlobal
