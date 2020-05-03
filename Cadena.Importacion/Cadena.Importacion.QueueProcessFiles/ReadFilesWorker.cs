@@ -1,9 +1,9 @@
 using Cadena.Importacion.Domain.Core.Bus;
+using Cadena.Importacion.Infra.Transversal.Models;
 using Cadena.Importacion.QueueProcessFiles.Application.Interfaces;
-using Cadena.Importacion.QueueProcessFiles.Domain.Commands;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,17 +12,23 @@ namespace Cadena.Importacion.QueueProcessFiles
     public class ReadFilesWorker : IHostedService, IDisposable
     {
         private readonly System.Timers.Timer _timer;
-        //private readonly IEventBus _bus;
         private readonly IFileProcess _process;
-        private static object _lock = new object();
+        private readonly LocalConfigurationSettings _localConfig;
 
-        public ReadFilesWorker(IEventBus bus, IFileProcess process)
+        private static object _lock = new object();
+        private const string _localKeys = "LocalKeys";
+
+        public ReadFilesWorker(IFileProcess process, IConfiguration configuration)
         {
             _process = process;
-            //_bus = bus;
+            var a = configuration.GetSection("Config");
+
+            _localConfig = new LocalConfigurationSettings();
+            configuration.GetSection(_localKeys).Bind(_localConfig);
+
             _timer = new System.Timers.Timer
             {
-                Interval = 30000,
+                Interval = _localConfig.ExecutionTime,
                 Enabled = true
             };
             _timer.Elapsed += Timer_Elapsed;
@@ -52,12 +58,7 @@ namespace Cadena.Importacion.QueueProcessFiles
                 {
                     _timer.Stop();
 
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(System.IO.File.Create(@"D:\Borrar\Logs\logs.txt")))
-                    {
-                        file.WriteLine($"Executed: {DateTime.Now.ToString()}");
-                    }
-
-                    _process.Process(@"D:\Borrar\Files");
+                    _process.Process(_localConfig.PathRead);
 
                     _timer.Start();
                 }
