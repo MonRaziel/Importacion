@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Cadena.Importacion.QueueProcessFiles
 {
-    public class ReadFiles : IHostedService, IDisposable
+    public class ReadFilesWorker : IHostedService, IDisposable
     {
         private readonly System.Timers.Timer _timer;
         private static object _lock = new object();
         private readonly IEventBus _bus;
 
-        public ReadFiles(IEventBus bus)
+        public ReadFilesWorker(IEventBus bus)
         {
             _bus = bus;
             _timer = new System.Timers.Timer

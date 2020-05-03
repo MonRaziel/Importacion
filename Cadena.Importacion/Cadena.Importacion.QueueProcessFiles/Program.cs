@@ -19,7 +19,7 @@ namespace Cadena.Importacion.QueueProcessFiles
                 {
                     RegisterServices(services);
                     services.AddMediatR(typeof(Program));
-                    services.AddHostedService<ReadFiles>();
+                    services.AddHostedService<ReadFilesWorker>();
                 });
 
         private static void RegisterServices(IServiceCollection services)
