@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Cadena.Importacion.Infra.Transversal.Interfaces;
+using Microsoft.Extensions.Configuration;
 
 namespace Cadena.Importacion.Infra.Transversal.Models
 {
-    public class LocalConfigurationSettings
+    public class LocalConfigurationSettings : ILocalConfigurationSettings
     {
-        public string PathRead { get; set; }
+        private const string _localKeys = "LocalKeys";
+
+        public LocalConfigurationSettings(IConfiguration configuration)
+        {
+            configuration.GetSection(_localKeys).Bind(this);
+        }
+
+
         public int ExecutionTime { get; set; }
+        public string PathRead { get; set; }
+        public string RabbitMQUrl { get; set; }
     }
 }

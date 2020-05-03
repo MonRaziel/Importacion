@@ -1,6 +1,8 @@
 using Cadena.Importacion.Domain.Core.Bus;
-using Cadena.Importacion.Infra.Transversal.Models;
+using Cadena.Importacion.Infra.Transversal.Events;
+using Cadena.Importacion.Infra.Transversal.Interfaces;
 using Cadena.Importacion.QueueProcessFiles.Application.Interfaces;
+using Cadena.Importacion.QueueProcessFiles.Domain.EventHandlers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -13,18 +15,14 @@ namespace Cadena.Importacion.QueueProcessFiles
     {
         private readonly System.Timers.Timer _timer;
         private readonly IFileProcess _process;
-        private readonly LocalConfigurationSettings _localConfig;
+        private readonly ILocalConfigurationSettings _localConfig;
 
         private static object _lock = new object();
-        private const string _localKeys = "LocalKeys";
 
-        public ReadFilesWorker(IFileProcess process, IConfiguration configuration)
+        public ReadFilesWorker(IFileProcess process, IEventBus bus, ILocalConfigurationSettings localConfig)
         {
             _process = process;
-            var a = configuration.GetSection("Config");
-
-            _localConfig = new LocalConfigurationSettings();
-            configuration.GetSection(_localKeys).Bind(_localConfig);
+            _localConfig = localConfig;
 
             _timer = new System.Timers.Timer
             {
@@ -32,6 +30,9 @@ namespace Cadena.Importacion.QueueProcessFiles
                 Enabled = true
             };
             _timer.Elapsed += Timer_Elapsed;
+
+            //Test to get message from RabbitMQ
+            //bus.Subscribe<FileProcessCreateEvent, FileProcessEventHandler>();
         }
 
         #region Worker Methods

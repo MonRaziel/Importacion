@@ -1,6 +1,7 @@
 ﻿using Cadena.Importacion.Domain.Core.Bus;
 using Cadena.Importacion.Domain.Core.Commands;
 using Cadena.Importacion.Domain.Core.Events;
+using Cadena.Importacion.Infra.Transversal.Interfaces;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -20,11 +21,13 @@ namespace Cadena.Importacion.Infra.Bus
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
         private readonly IServiceScopeFactory _serviceScopeFactory;
+        private readonly ILocalConfigurationSettings _locaConfig;
 
-        public RabbitMQBus(IMediator mediator, IServiceScopeFactory serviceScopeFactory)
+        public RabbitMQBus(IMediator mediator, IServiceScopeFactory serviceScopeFactory, ILocalConfigurationSettings locaConfig)
         {
             _mediator = mediator;
             _serviceScopeFactory = serviceScopeFactory;
+            _locaConfig = locaConfig;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
         }
@@ -36,7 +39,7 @@ namespace Cadena.Importacion.Infra.Bus
 
         public void Publish<T>(T @event) where T : Event
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = _locaConfig.RabbitMQUrl };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -84,7 +87,7 @@ namespace Cadena.Importacion.Infra.Bus
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "localhost",
+                HostName = _locaConfig.RabbitMQUrl,
                 DispatchConsumersAsync = true
             };
 
