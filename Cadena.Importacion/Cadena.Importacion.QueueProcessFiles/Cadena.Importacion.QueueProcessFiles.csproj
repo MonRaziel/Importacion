@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cadena.Importacion.Infra.IoC\Cadena.Importacion.Infra.IoC.csproj" />
+    <ProjectReference Include="..\Cadena.Importacion.QueueProcessFiles.Application\Cadena.Importacion.QueueProcessFiles.Application.csproj" />
     <ProjectReference Include="..\Cadena.Importacion.QueueProcessFiles.Domain\Cadena.Importacion.QueueProcessFiles.Domain.csproj" />
   </ItemGroup>
 </Project>

@@ -2,9 +2,7 @@
 using Cadena.Importacion.Infra.Transversal.Events;
 using Cadena.Importacion.QueueProcessFiles.Domain.Commands;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,10 +20,10 @@ namespace Cadena.Importacion.QueueProcessFiles.Domain.CommandHandlers
         public Task<bool> Handle(CreateFileProcessCommand request, CancellationToken cancellationToken)
         {
             //publish event to RabbitMQ
-
-            foreach (string json in request.JsonFilesConfiguration)
+            for (int i = 0; i < request.JsonFilesConfiguration.Count; i++)
             {
-                _bus.Publish(new FileProcessCreateEvent(request.Guid, request.Date, json));
+                _bus.Publish(new FileProcessCreateEvent(request.Guid, request.Date, request.JsonFilesConfiguration[i]));
+                File.Delete(request.FilesImported[i]);
             }
 
             return Task.FromResult(true);

@@ -1,5 +1,7 @@
 ﻿using Cadena.Importacion.Domain.Core.Bus;
 using Cadena.Importacion.Infra.Bus;
+using Cadena.Importacion.QueueProcessFiles.Application.Interfaces;
+using Cadena.Importacion.QueueProcessFiles.Application.Services;
 using Cadena.Importacion.QueueProcessFiles.Domain.CommandHandlers;
 using Cadena.Importacion.QueueProcessFiles.Domain.Commands;
 using MediatR;
@@ -18,6 +20,8 @@ namespace Cadena.Importacion.Infra.IoC
                 var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
                 return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory);
             });
+
+            services.AddTransient<IFileProcess, FileProcess>();
 
             //Subscriptions
             //services.AddTransient<TransferEventHandler>();

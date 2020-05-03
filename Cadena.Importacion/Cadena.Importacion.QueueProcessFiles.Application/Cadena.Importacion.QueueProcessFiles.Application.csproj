@@ -5,13 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Cadena.Importacion.Domain.Core\Cadena.Importacion.Domain.Core.csproj" />
-    <ProjectReference Include="..\Cadena.Importacion.Infra.Bus\Cadena.Importacion.Infra.Bus.csproj" />
-    <ProjectReference Include="..\Cadena.Importacion.QueueProcessFiles.Application\Cadena.Importacion.QueueProcessFiles.Application.csproj" />
     <ProjectReference Include="..\Cadena.Importacion.QueueProcessFiles.Domain\Cadena.Importacion.QueueProcessFiles.Domain.csproj" />
   </ItemGroup>
 

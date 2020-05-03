@@ -10,5 +10,6 @@ namespace Cadena.Importacion.QueueProcessFiles.Domain.Commands
         public Guid Guid { get; set; }
         public DateTime Date { get; set; }
         public List<string> JsonFilesConfiguration { get; set; }
+        public List<string> FilesImported { get; set; }
     }
 }

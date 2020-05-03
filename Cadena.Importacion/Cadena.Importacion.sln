@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadena.Importacion.Infra.Tr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadena.Importacion.QueueProcessFiles.Domain", "Cadena.Importacion.QueueProcessFiles.Domain\Cadena.Importacion.QueueProcessFiles.Domain.csproj", "{6B5B08D6-1280-458B-9EEB-8001184E16E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadena.Importacion.QueueProcessFiles.Application", "Cadena.Importacion.QueueProcessFiles.Application\Cadena.Importacion.QueueProcessFiles.Application.csproj", "{0EA2EAF5-42DA-4913-87C0-047A65483F60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B5B08D6-1280-458B-9EEB-8001184E16E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA2EAF5-42DA-4913-87C0-047A65483F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA2EAF5-42DA-4913-87C0-047A65483F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA2EAF5-42DA-4913-87C0-047A65483F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA2EAF5-42DA-4913-87C0-047A65483F60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{4550FBC5-C137-48CF-864F-23D5840F98D5} = {BDA98BCC-C65F-4D52-8266-59FE46A98555}
 		{51CE1D00-83AC-41C8-84D6-976681B8D078} = {D7E0E84B-3732-4271-B9CD-6AB1C018447C}
 		{6B5B08D6-1280-458B-9EEB-8001184E16E5} = {74090CE3-17C9-4610-8328-76CD303D1410}
+		{0EA2EAF5-42DA-4913-87C0-047A65483F60} = {74090CE3-17C9-4610-8328-76CD303D1410}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0D5160F-3A31-4116-9793-DE1CCBD51724}
